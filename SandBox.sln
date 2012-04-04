@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQSample2", "LINQSample2\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxForWebApplicationSample", "AjaxForWebApplicationSample\AjaxForWebApplicationSample.csproj", "{3979126F-0084-481B-8298-08DE610801A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jQuerySample", "jQuerySample\jQuerySample.csproj", "{7D2D5E4B-2550-4F61-922A-892859895FF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,16 @@ Global
 		{3979126F-0084-481B-8298-08DE610801A7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{3979126F-0084-481B-8298-08DE610801A7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{3979126F-0084-481B-8298-08DE610801A7}.Release|x86.ActiveCfg = Release|Any CPU
+		{7D2D5E4B-2550-4F61-922A-892859895FF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D2D5E4B-2550-4F61-922A-892859895FF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D2D5E4B-2550-4F61-922A-892859895FF4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7D2D5E4B-2550-4F61-922A-892859895FF4}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7D2D5E4B-2550-4F61-922A-892859895FF4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7D2D5E4B-2550-4F61-922A-892859895FF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D2D5E4B-2550-4F61-922A-892859895FF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D2D5E4B-2550-4F61-922A-892859895FF4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7D2D5E4B-2550-4F61-922A-892859895FF4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7D2D5E4B-2550-4F61-922A-892859895FF4}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
