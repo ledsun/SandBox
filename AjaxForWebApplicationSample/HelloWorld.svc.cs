@@ -38,6 +38,18 @@ namespace AjaxForWebApplicationSample
 
             return new Data[]{a, b};
         }
+
+        [OperationContract, WebGet]
+        public string Echo(string str)
+        {
+            return str;
+        }
+
+        [OperationContract]
+        public string PostEcho(Req req)
+        {
+            return req.str;
+        }
     }
 
     [DataContract]
@@ -47,5 +59,12 @@ namespace AjaxForWebApplicationSample
         public string name { get; set; }
         [DataMember]
         public int value { get; set; }
+    }
+
+    [DataContract]
+    public class Req
+    {
+        [DataMember]
+        public string str { get; set; }
     }
 }

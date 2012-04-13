@@ -30,6 +30,10 @@
             </tr>
         </tbody>
     </table>
+    <hr />
+    ボタンを押すと/HelloWorld.svc/Echoを呼び出して入力文字を取得します。<br />
+    <input type="button" id="button3" value="ボタン3" />
+    <span id="result3"></span>
     </form>
     <script src="/Scripts/jquery-1.7.1.js" type="text/javascript"></script>
     <script type="text/jscript">
@@ -54,9 +58,6 @@
                 $.ajax({
                     type: "GET",
                     url: "/HelloWorld.svc/Data",
-                    data: "{}",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
                     success: function (msg) {
                         $('#result1').html('成功しました。' + msg.d.name + msg.d.value);
                     },
@@ -70,9 +71,6 @@
                 $.ajax({
                     type: "GET",
                     url: "/HelloWorld.svc/Datas",
-                    data: "{}",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
                     success: function (msg) {
                         var rows = "";
                         for (i = 0; i < msg.d.length; i++) {
@@ -90,6 +88,18 @@
                 });
             });
 
+            $("#button3").click(function (event) {
+                $.ajax({
+                    type: "GET",
+                    url: "/HelloWorld.svc/Echo?str=hoge",
+                    success: function (msg) {
+                        $('#result3').html('成功しました。' + msg.d);
+                    },
+                    error: function (msg) {
+                        $('#result3').html('エラーが発生しました。' + msg.status)
+                    }
+                });
+            });
         });</script>
 </body>
 </html>
