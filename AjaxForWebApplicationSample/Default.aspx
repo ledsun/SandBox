@@ -32,6 +32,7 @@
     </table>
     </form>
     <script src="/Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+    <script src="/Scripts/linq.js" type="text/javascript"></script>
     <script type="text/jscript">
         $(document).ready(function () {
             $("#button").click(function (event) {
@@ -74,15 +75,10 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (msg) {
-                        var rows = "";
-                        for (i = 0; i < msg.d.length; i++) {
-                            rows += "<tr>";
-                            rows += "<td>" + msg.d[i].name + "</td>";
-                            rows += "<td>" + msg.d[i].value + "</td>";
-                            rows += "</tr>";
-                        }
                         $('#result2').html('成功しました。');
-                        $('#tbl').append(rows);
+                        $('#tbl').append(Enumerable.From(msg.d)
+                            .Select('"<tr><td>"+$.name+"</td><td>"+$.value+"</td><tr>"')
+                            .ToString());
                     },
                     error: function (msg) {
                         $('#result2').html('エラーが発生しました。' + msg.status)
