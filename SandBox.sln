@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jQuerySample", "jQuerySampl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TupleSample", "TupleSample\TupleSample.csproj", "{2AB23B3B-0B4D-45DE-8B81-DCE13CD9288C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CssSample", "CssSample\CssSample.csproj", "{AD4DC03B-E718-4C4D-A582-A6519870BA2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,16 @@ Global
 		{2AB23B3B-0B4D-45DE-8B81-DCE13CD9288C}.Release|Mixed Platforms.Build.0 = Release|x86
 		{2AB23B3B-0B4D-45DE-8B81-DCE13CD9288C}.Release|x86.ActiveCfg = Release|x86
 		{2AB23B3B-0B4D-45DE-8B81-DCE13CD9288C}.Release|x86.Build.0 = Release|x86
+		{AD4DC03B-E718-4C4D-A582-A6519870BA2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD4DC03B-E718-4C4D-A582-A6519870BA2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD4DC03B-E718-4C4D-A582-A6519870BA2F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AD4DC03B-E718-4C4D-A582-A6519870BA2F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AD4DC03B-E718-4C4D-A582-A6519870BA2F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AD4DC03B-E718-4C4D-A582-A6519870BA2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD4DC03B-E718-4C4D-A582-A6519870BA2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD4DC03B-E718-4C4D-A582-A6519870BA2F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AD4DC03B-E718-4C4D-A582-A6519870BA2F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AD4DC03B-E718-4C4D-A582-A6519870BA2F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
