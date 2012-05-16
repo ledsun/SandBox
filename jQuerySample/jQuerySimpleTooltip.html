@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jQuerySimpleTooltipのサンプル</title>
+    <style type="text/css" media="screen">
+        .tooltip
+        {
+            width: 200px;
+            margin: 0;
+            padding: 5px;
+            font-size: 11px;
+            color: #666;
+            background: #fff;
+            border: 5px solid #ccc;
+        }
+        .tooltip p
+        {
+            margin: 0;
+            text-align: justify;
+        }
+        #tooltip_1
+        {
+            z-index: 100000;
+        }
+        #tooltip_2
+        {
+            height: 300px;
+            width: 300px;
+            background: #fff;
+            border-color: #e66;
+        }
+        #tooltip_3
+        {
+            background: #fff;
+            border-color: #8c6;
+        }
+        pre
+        {
+            overflow: auto;
+            padding: 5px;
+            color: #fff;
+            background: #666;
+        }
+        p, pre
+        {
+            margin-left: 10px;
+        }
+        p.customTooltip
+        {
+            width: 200px;
+            height: 50px;
+            margin: 0;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>
+            jQuery Simple Tooltip</h1>
+        <h2>
+            シンプルに</h2>
+        <p>
+            simpletooltipメソッドで<a href="#tooltip_1" class="tooltiplink">リンク</a>にツールチップを設定</p>
+        <pre>$("a.tooltiplink").simpletooltip();</pre>
+        <h3>
+            hrefで表示するdivのIDを指定します</h3>
+        <pre>
+&lt;a href="#ma_tooltip"&gt;Lien&lt;/a&gt;
+&lt;div id="ma_tooltip"&gt;Tooltip&lt;/div&gt;</pre>
+        <h3>
+            表示内容はspanでもOK</h3>
+        <p>
+            <a href="#tooltip_4" class="tooltiplink">デモ</a></p>
+        <pre>&lt;span id="Span1" class="tooltip"&gt;Tooltip 4&lt;/span&gt;</pre>
+        <h3>
+            ツールチップのスタイルは呼び出し対象のdivに設定</h3>
+        <p>
+            <a href="#tooltip_2" class="tooltiplink">デモ</a>
+        </p>
+        <h3>
+            リンクは#以降しか見ません</h3>
+        <p>
+            <a id="demo_6" href="xxx#tooltip_1">デモ</a></p>
+        <pre>&lt;a id="A1" href="xxx#tooltip_1"&gt;デモ&lt;/a&gt;</pre>
+        <h2>
+            オプション</h2>
+        <h3>
+            click</h3>
+        <p>
+            クリックしないと開かない <a href="#tooltip_3" class="clic">デモ</a></p>
+        <pre>$("a.clic").simpletooltip({ click: true });</pre>
+        <h3>
+            hideDelay</h3>
+        <p>
+            閉じるまで時間がかかる <a href="#tooltip_3" class="delay">デモ</a></p>
+        <pre>$("a.delay").simpletooltip({ hideDelay: 0.5 });</pre>
+        <h3>
+            showDelay</h3>
+        <p>
+            開くまで時間がかかる <a id="demo_10" href="#tooltip_3">デモ</a></p>
+        <pre>$("a.delay").simpletooltip({ showDelay: 0.5 });</pre>
+        <h3>
+            hedeOnLeave</h3>
+        <p>
+            閉じない<a id="demo_7" href="#tooltip_5">デモ</a></p>
+        <pre>$("a").simpletooltip( { hideOnLeave: false } );</pre>
+        <p>
+            ツールチップ内のリンクにrel="close"を指定する。リンクをクリックするとツールチップを閉じます。</p>
+        <pre>
+&lt;a href="#..." rel="close"&gt;閉じる&lt;a&gt;</pre>
+        <h3>
+            margin</h3>
+        <p>
+            ウィンドウ端とツールチップの最小幅（デフォルト5）<a id="demo_1" href="#tooltip_1">デモ</a></p>
+        <pre>$("a").simpletooltip( { margin: 10 } );</pre>
+        <h3>
+            showEffect et hideEffect</h3>
+        <p>
+            表示と閉じるときのエフェクトを指定できる。エフェクト名はjQuery Effectsのメソッド名と対応しています。</p>
+        <p>
+            フェードイン、フェードアウト <a id="demo_2" href="#tooltip_1">デモ</a></p>
+        <pre>// Effet "fadeIn"
+$("a").simpletooltip( { showEffect: "fadeIn", hideEffect: "fadeOut" } );</pre>
+        <p>
+            スライドイン、スライドアウト <a id="demo_3" href="#tooltip_1">デモ</a></p>
+        <pre>// Effet "slideDown"
+$("a").simpletooltip( { showEffect: "slideDown", hideEffect: "slideUp" } );</pre>
+        <p>
+            左上から拡大、左上へ縮小 <a id="demo_4" href="#tooltip_1">デモ</a></p>
+        <pre>// Effet "show"
+$("a").simpletooltip( { showEffect: "show", hideEffect: "hide" } );</pre>
+        <h3>
+            showCallback</h3>
+        <p>
+            開く前に処理を追加 <a id="demo_8" href="#tooltip_1">デモ</a></p>
+        <pre>$("a").simpletooltip({
+	showCallback: function(tooltip){
+		window.alert('Callback : affichage de la tooltip #'+tooltip.id);
+	}
+});</pre>
+        <h3>
+            hideCallback</h3>
+        <p>
+            閉じる前に処理を追加 <a id="demo_11" href="#tooltip_1">デモ</a></p>
+        <pre>$("a").simpletooltip({
+	hideCallback: function(tooltip){
+		window.alert('Callback : affichage de la tooltip #'+tooltip.id);
+	}
+});</pre>
+        <h3>
+            customTooltip</h3>
+        <p>
+            ツールチップをその場で生成 <strong id="demo_9">デモ</strong> aタグである必要はない。$(target).text()で対象文字列を取得できます。</p>
+        <pre>// Permet de generer dynamiquement une tooltip
+$("a").simpletooltip({
+	customTooltip: function(target){
+		return '&lt;p class="customTooltip"&gt;Texte de l\'element survole :&lt;br /&gt; "' + $(target).text() + '" &lt;/p&gt;';
+	}
+});</pre>
+        <!--ツールチップの表示内容-->
+        <div id="tooltip_1" class="tooltip">
+            <h2>
+                Tooltip 1</h2>
+            <p>
+                github に自分のリポジトリを公開していると、たまに pull request をされることがあります。また逆に、他人のリポジトリのコードを使っていて、どうしても気になるバグを見つけて修正したときなど、相手に
+                pull request を送りたいことがあります。こんなときにどうすればよいかをまとめてみました。
+            </p>
+        </div>
+        <div id="tooltip_2" class="tooltip">
+            <h2>
+                Tooltip 2</h2>
+            <p>
+                The jQuery library provides several techniques for adding animation to a web page. These include simple, standard animations that are frequently used, and the ability to craft sophisticated custom effects. In this chapter, we’ll closely examine each of the effect methods, revealing all of the mechanisms jQuery has for providing visual feedback to the user.</p>
+        </div>
+        <div id="tooltip_3" class="tooltip">
+            <h2>
+                Tooltip 3</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.</p>
+        </div>
+        <span id="tooltip_4" class="tooltip">Tooltip 4</span>
+        <div id="tooltip_5" class="tooltip">
+            <h2>
+                Tooltip 5</h2>
+            <p>
+                <a href="#" rel="close">閉じる</a></p>
+            <p>
+                兵庫県西宮市の若手経営者らでつくる西宮青年会議所（西宮ＪＣ）が西宮市内の高校生３２２３人に地図を示して日本の国境を描かせる調査を行ったところ、正解できた生徒は全体の２％にも満たなかったことが分かった。日本固有の領土である沖縄県・尖閣諸島をめぐる中国船による領海侵入など横暴な行動が相次いでいるなか、西宮ＪＣは生徒の大半が国境を正しく認識していない状況を深刻に受け止めている。</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.simpletooltip.js"></script>
+    <script type="text/javascript">
+        $("a.tooltiplink").simpletooltip();
+        $("a.clic").simpletooltip({ click: true });
+        $("a.delay").simpletooltip({ hideDelay: 0.5 });
+        $("#demo_1").simpletooltip({ margin: 100 });
+        $("#demo_2").simpletooltip({ showEffect: "fadeIn", hideEffect: "fadeOut" });
+        $("#demo_3").simpletooltip({ showEffect: "slideDown", hideEffect: "slideUp" });
+        $("#demo_4").simpletooltip({ showEffect: "show", hideEffect: "hide" });
+        $("#demo_6").simpletooltip({ hideDelay: 0.5 });
+        $("#demo_7").simpletooltip({ hideOnLeave: false });
+        $("#demo_8").simpletooltip({
+            showCallback: function (tooltip) {
+                window.alert('Callback : affichage de la tooltip #' + tooltip.id);
+            }
+        });
+        $("#demo_9").simpletooltip({
+            customTooltip: function (target) {
+                return '<p class="customTooltip">Texte de l\'element survole :<br /> "' + $(target).text() + '" </p>';
+            }
+        });
+        $("#demo_10").simpletooltip({ showDelay: 0.5 });
+        $("#demo_11").simpletooltip({
+            hideCallback: function (tooltip) {
+                window.alert('Callback : affichage de la tooltip #' + tooltip.id);
+            }
+        });
+    </script>
+</body>
+</html>
