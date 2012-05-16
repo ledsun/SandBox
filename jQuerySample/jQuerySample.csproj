@@ -53,6 +53,7 @@
   <ItemGroup>
     <Content Include="1.1.html" />
     <Content Include="jQuerySimpleTooltip.html" />
+    <Content Include="Scripts\jquery.simpletooltip.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
