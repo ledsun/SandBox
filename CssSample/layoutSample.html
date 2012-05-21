@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .target div
+        {
+            background-color: Aqua;
+        }
+        .target span
+        {
+            background-color: Gray;
+        }
+        .target div, .target span
+        {
+            border-width: 1px;
+            border-style: solid;
+            margin: 1px;
+            width: 100px;
+        }
+        .float-left div, .float-left span
+        {
+            float: left;
+        }
+        .display-none div, .display-none span
+        {
+            display: none;
+        }
+        .display-block div, .display-block span
+        {
+            display: block;
+        }
+        .display-inline div, .display-inline span
+        {
+            display: inline;
+        }
+        .display-inline-block div, .display-inline-block span
+        {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        単に並べると</h1>
+    <div class="target">
+        <h2>
+            spanは横に並ぶ</h2>
+        00<span>aa</span>11 22<span>bb</span>33
+        <h2>
+            divは縦に並ぶ</h2>
+        00<div>
+            aa</div>
+        11 22<div>
+            bb</div>
+        33
+    </div>
+    <h1>
+        float left</h1>
+    <div class="target float-left">
+        <h2>
+            spanの間にスペースがあっても隙間が減る。次のブロック要素が右に来る</h2>
+        00<span>aa</span>11 22<span>bb</span>33
+        <h2>
+            divが横に並ぶ</h2>
+        00<div>
+            aa</div>
+        11 22<div>
+            bb</div>
+        33
+        <br />
+    </div>
+    <h1>
+        display</h1>
+    <h2>
+        none</h2>
+    <div class="target display-none">
+        <h3>
+            非表示になる</h3>
+        00<span>aa</span>11 22<span>bb</span>33
+        <h3>
+            非表示になる</h3>
+        00<div>
+            aa</div>
+        11 22<div>
+            bb</div>
+        33
+    </div>
+    <h2>
+        block</h2>
+    <div class="target display-block">
+        <h3>
+            divと同じ表示になる</h3>
+        00<span>aa</span>11 22<span>bb</span>33
+        <h3>
+            divは変わらず</h3>
+        00<div>
+            aa</div>
+        11 22<div>
+            bb</div>
+        33
+    </div>
+    <h2>
+        inline</h2>
+    <div class="target display-inline">
+        <h3>
+            span変わらず</h3>
+        00<span>aa</span>11 22<span> bb</span>33
+        <h3>
+            divがspanと同じように横に並ぶ</h3>
+        00<div>
+            aa</div>
+        11 22<div>
+            bb</div>
+        33
+    </div>
+    <h2>
+        inline-block</h2>
+    <div class="target display-inline-block">
+        <h3>
+            サイズ指定が効く</h3>
+        00<span>aa</span>11 22<span>bb</span>33
+        <h3>
+            divがspanと同じように横に並ぶ</h3>
+        00<div>
+            aa</div>
+        11 22<div>
+            bb</div>
+        33
+    </div>
+</body>
+</html>
