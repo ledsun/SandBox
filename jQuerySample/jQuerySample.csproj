@@ -70,6 +70,7 @@
     <Content Include="1.5.1.html" />
     <Content Include="1.5.2.html" />
     <Content Include="1.6.1.html" />
+    <Content Include="11.1.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

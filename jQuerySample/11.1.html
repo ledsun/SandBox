@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charsert=UTF-8" />
+    <title></title>
+    <style type="text/css">
+        *
+        {
+            font-family: Verdana;
+            font-size: 96%;
+        }
+        label
+        {
+            width: 10em;
+            float: left;
+        }
+        label.error
+        {
+            float: none;
+            color: Red;
+            padding-left: .5em;
+            vertical-align: top;
+        }
+        div
+        {
+            clear: both;
+        }
+        input, textarea
+        {
+            width: 15em;
+        }
+        .submit
+        {
+            margin-left: 10em;
+        }
+    </style>
+</head>
+<body>
+    <form id="commnentForm" method="get" action="">
+    <fieldset>
+        <legend>A simple comment from with submit validation and default messages</legend>
+        <div>
+            <label for="checkBox">
+                Check</label><input id="check" name="check" type="checkbox" />
+        </div>
+        <div>
+            <label for="cname">
+                Name</label><input id="cname" name="name" class="{required:true} required" />
+        </div>
+        <div>
+            <input class="submit" type="submit" value="Submit" />
+        </div>
+    </fieldset>
+    </form>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/localization/messages_ja.js"></script>
+    <script type="text/javascript">
+        $('form').validate({
+            debug: true,
+            submitHandler: function () {
+                alert('aaa');
+            },
+            rules: { name: { required: '#check:checked', minlength: 2} },
+            onkeyup: true,
+            onfocusout: true,
+            onclick: false
+        }).form();
+        $('#cname').keyup(function () { $('#commnentForm').valid(); });
+    </script>
+</body>
+</html>
