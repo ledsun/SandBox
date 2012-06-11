@@ -1,0 +1,39 @@
+﻿body
+{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #000000;
+    background: #ffffff;
+}
+#wrapper
+{
+    margin: 0 auto;
+    width: 527px;
+    text-align: left;
+    color: #333333;
+    background: #ffffff url(../images/e/body.gif) repeat-y;
+}
+#header
+{
+    position: relative;
+    height: 394px;
+    color: #333333;
+    background-color: #ffffff url(../images/e/head.jpg) no-repeat;
+}
+#maincontent
+{
+    float: left;
+    width: 235px;
+    margin: 0 0 20px 60px;
+}
+#sidebar
+{
+    float: right;
+    width: 150px;
+    margin: 0 52px 20px 0;
+}
+#footer
+{
+    clear: both;
+}

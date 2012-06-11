@@ -51,6 +51,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\a.css" />
+    <Content Include="css\b.css" />
+    <Content Include="css\c.css" />
+    <Content Include="css\d.css" />
+    <Content Include="css\e.css" />
     <Content Include="layoutSample.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -59,6 +64,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="chapter2-2.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

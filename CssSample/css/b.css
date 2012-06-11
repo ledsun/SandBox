@@ -1,0 +1,30 @@
+﻿body
+{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #000000;
+    background: #e6e6e6;
+}
+#wrapper
+{
+    margin: 20px auto;
+    width: 600px;
+    text-align: left;
+    color: #333333;
+    background: #ffffff url(../images/b/back.gif);
+}
+#maincontent
+{
+    float: left;
+    width: 400px;
+}
+#sidebar
+{
+    float: right;
+    width: 200px;
+}
+#footer
+{
+    clear: both;
+}

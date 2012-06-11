@@ -1,0 +1,33 @@
+﻿body
+{
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    background: #334455;
+}
+#wrapper
+{
+    color: #000000;
+    background: #ffffff url(../images/c/back.gif) repeat-y;
+}
+#header
+{
+    height: 100px;
+}
+#maincontent
+{
+    margin: 0 0 0 250px;
+    color: #333333;
+    background: #ffffffff;
+}
+#sidebar
+{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 250px;
+}
+#footer
+{
+    clear: both;
+}
