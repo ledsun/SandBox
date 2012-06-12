@@ -2,74 +2,77 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <style type="text/css">
-        /* p074 上 */
-        #sample1
-        {
-            color: #339900;
-            background: #ffffff;
-        }
-        #sample2
-        {
-            color: #390;
-            background: #fff;
-        }
-        #sample3
-        {
-            color: rgb(51,153,0);
-            background: rgb(255,255,255);
-        }
-        #sample4
-        {
-            color: rgb(20%,60%,0%);
-            background: rgb(100%,100%,100%);
-        }
-        /* p074 中 */
-        em
-        {
-            color: #fff;
-            background: #390;
-            font-style: normal;
-            line-height: 2;
-            border: double 6px #000;
-        }
-        /* p074 下 */
-        .sample1
-        {
-            line-height: 1.5;
-            color: #333;
-            background: #fff;
-        }
-    </style>
+    <link rel="Stylesheet" type="text/css" href="2-3.css"/>
 </head>
 <body>
-    <h1>
-        指定要素の使い分けが大事<br />
-        テキストの色を変える</h1>
-    <p style="background: black; padding: 5px 5px 5px 5px;">
-        <span id="sample1">sample1</span> <span id="sample2">sample2</span> <span id="sample3">
-            sample3</span> <span id="sample4">sample4</span>
-    </p>
-    <h1>
-        文字色とのバランスも視野に入れて<br />
-        テキストに背景色をつける</h1>
-    このテキストの<em>一部<br />
-        には背景色を指定</em>しています。
-    <h1>
-        値の単位をうまくコントロール<br />
-        テキストの行間を広くする</h1>
     <div>
-        行間標準：<br />
-        行間の設定は、CSS を使うことで初めて実現で<br />
-        きる。行間をブロックレベル要素に指定すると、<br />
-        そこに含まれる各行の最低限の高さを指定した<br />
-        ことになる。</div>
-    <div class="sample1">
-        行間1.5倍：<br />
-        行間の設定は、CSS を使うことで初めて実現で<br />
-        きる。行間をブロックレベル要素に指定すると、<br />
-        そこに含まれる各行の最低限の高さを指定した<br />
-        ことになる。</div>
+        <div id="p74up">
+            <h2>
+                指定要素の使い分けが大事<br />
+                テキストの色を変える</h2>
+            <span id="sample1">sample1</span> <span id="sample2">sample2</span> <span id="sample3">
+                sample3</span> <span id="sample4">sample4</span>
+        </div>
+        <div id="p74middle">
+            <h2>
+                文字色とのバランスも視野に入れて<br />
+                テキストに背景色をつける</h2>
+            このテキストの<em>一部<br />
+                には背景色を指定</em>しています。
+        </div>
+        <div id="p74down">
+            <h2>
+                値の単位をうまくコントロール<br />
+                テキストの行間を広くする</h2>
+            <div>
+                行間標準：<br />
+                行間の設定は、CSS を使うことで初めて実現で<br />
+                きる。行間をブロックレベル要素に指定すると、<br />
+                そこに含まれる各行の最低限の高さを指定した<br />
+                ことになる。</div>
+            <div class="sample1">
+                行間1.5倍：<br />
+                行間の設定は、CSS を使うことで初めて実現で<br />
+                きる。行間をブロックレベル要素に指定すると、<br />
+                そこに含まれる各行の最低限の高さを指定した<br />
+                ことになる。</div>
+        </div>
+    </div>
+    <div>
+        <div id="p75up">
+            <h2>
+                ブラウザでの見え方も考慮して<br />
+                フォントサイズを指定する</h2>
+            <div class="sample1">
+                サイズ：xx-small</div>
+            <div class="sample2">
+                サイズ：x-small</div>
+            <div class="sample3">
+                サイズ：small</div>
+            <div class="sample4">
+                サイズ：medium</div>
+            <div class="sample5">
+                サイズ：large</div>
+            <div class="sample6">
+                サイズ：x-large</div>
+            <div class="sample7">
+                サイズ：xx-large</div>
+        </div>
+        <div id="p75middle">
+            <h2>
+                必ず一般分類名も記述しよう<br />
+                表示するフォントを指定する</h2>
+            <div class="sample1">
+                明朝体</div>
+            <div class="sample2">
+                ゴシック体</div>
+        </div>
+        <div id="p75down">
+            <h2>
+                優先度を確認しながら設定する<br />
+                リンク手kストの下線の排除</h2>
+            <a href="">ホーム</a>|<a href="">会社情報</a>|<a href="">製品情報</a>|<a href="">サポート</a>
+        </div>
     </div>
 </body>
 </html>

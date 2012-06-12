@@ -1,0 +1,97 @@
+﻿body > div
+{
+    float: left;
+}
+body > div > div
+{
+    width: 400px;
+    height: 330px;
+    border: 1px solid black;
+    background: #ccc;
+}
+/* p074 上 */
+#p74up #sample1
+{
+    color: #339900;
+    background: #ffffff;
+}
+#p74up #sample2
+{
+    color: #390;
+    background: #fff;
+}
+#p74up #sample3
+{
+    color: rgb(51,153,0);
+    background: rgb(255,255,255);
+}
+#p74up #sample4
+{
+    color: rgb(20%,60%,0%);
+    background: rgb(100%,100%,100%);
+}
+/* p074 中 */
+#p74middle em
+{
+    color: #fff;
+    background: #390;
+    font-style: normal;
+    line-height: 2;
+    border: double 6px #000;
+}
+/* p074 下 */
+#p74down .sample1
+{
+    line-height: 1.5;
+    color: #333;
+    background: #fff;
+}
+/* p075 上 */
+#p75up .sample1
+{
+    font-size: xx-small;
+}
+#p75up .sample2
+{
+    font-size: x-small;
+}
+#p75up .sample3
+{
+    font-size: small;
+}
+#p75up .sample4
+{
+    font-size: medium;
+}
+#p75up .sample5
+{
+    font-size: large;
+}
+#p75up .sample6
+{
+    font-size: x-large;
+}
+#p75up .sample7
+{
+    font-size: xx-large;
+}
+/* p075中 */
+#p75middle .sample1
+{
+    font-family: "ＭＳ Ｐ明朝" , "ヒラギノ明朝 Pro W3" , "平成明朝" , serif;
+}
+#p75middle .sample2
+{
+    font-family: "ＭＳ Ｐゴシック" , "ヒラギノ角ゴ Pro W3" , Osaka , san-serif;
+}
+/* p075下 */
+#p75down a
+{
+    text-decoration: none;
+}
+#p75down a:hover
+{
+    text-decoration: underline;
+    color: #f60;
+    background: #fff;
+}
