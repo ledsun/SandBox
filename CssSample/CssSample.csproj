@@ -51,6 +51,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="chapter2-3.html" />
     <Content Include="css\a.css" />
     <Content Include="css\b.css" />
     <Content Include="css\c.css" />

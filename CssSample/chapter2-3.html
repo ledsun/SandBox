@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        /* p074 上 */
+        #sample1
+        {
+            color: #339900;
+            background: #ffffff;
+        }
+        #sample2
+        {
+            color: #390;
+            background: #fff;
+        }
+        #sample3
+        {
+            color: rgb(51,153,0);
+            background: rgb(255,255,255);
+        }
+        #sample4
+        {
+            color: rgb(20%,60%,0%);
+            background: rgb(100%,100%,100%);
+        }
+        /* p074 中 */
+        em
+        {
+            color: #fff;
+            background: #390;
+            font-style: normal;
+            line-height: 2;
+            border: double 6px #000;
+        }
+        /* p074 下 */
+        .sample1
+        {
+            line-height: 1.5;
+            color: #333;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        指定要素の使い分けが大事<br />
+        テキストの色を変える</h1>
+    <p style="background: black; padding: 5px 5px 5px 5px;">
+        <span id="sample1">sample1</span> <span id="sample2">sample2</span> <span id="sample3">
+            sample3</span> <span id="sample4">sample4</span>
+    </p>
+    <h1>
+        文字色とのバランスも視野に入れて<br />
+        テキストに背景色をつける</h1>
+    このテキストの<em>一部<br />
+        には背景色を指定</em>しています。
+    <h1>
+        値の単位をうまくコントロール<br />
+        テキストの行間を広くする</h1>
+    <div>
+        行間標準：<br />
+        行間の設定は、CSS を使うことで初めて実現で<br />
+        きる。行間をブロックレベル要素に指定すると、<br />
+        そこに含まれる各行の最低限の高さを指定した<br />
+        ことになる。</div>
+    <div class="sample1">
+        行間1.5倍：<br />
+        行間の設定は、CSS を使うことで初めて実現で<br />
+        きる。行間をブロックレベル要素に指定すると、<br />
+        そこに含まれる各行の最低限の高さを指定した<br />
+        ことになる。</div>
+    </div>
+</body>
+</html>
