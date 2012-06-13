@@ -95,7 +95,7 @@ body > div > div
     color: #f60;
     background: #fff;
 }
-/* p075上 */
+/* p076上 */
 #p76up .sample1
 {
     font-weight: normal;
@@ -108,7 +108,7 @@ body > div > div
 {
     font-weight: bold;
 }
-/* p075中 */
+/* p076中 */
 #p76middle .sample1
 {
     font-style: normal;
@@ -121,7 +121,7 @@ body > div > div
 {
     font-style: oblique;
 }
-/* p075下 */
+/* p076下 */
 #p76down h1.sample1
 {
     text-decoration: underline;
@@ -133,4 +133,16 @@ body > div > div
     padding: 4px;
     font-size: x-large;
 }
-
+/* p077上 */
+#p77up .sample1
+{
+    text-align: left;
+}
+#p77up .sample2
+{
+    text-align: center;
+}
+#p77up .sample3
+{
+    text-align: right;
+}
