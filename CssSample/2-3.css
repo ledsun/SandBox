@@ -95,3 +95,42 @@ body > div > div
     color: #f60;
     background: #fff;
 }
+/* p075上 */
+#p76up .sample1
+{
+    font-weight: normal;
+}
+#p76up .sample2
+{
+    font-weight: 600;
+}
+#p76up .sample3
+{
+    font-weight: bold;
+}
+/* p075中 */
+#p76middle .sample1
+{
+    font-style: normal;
+}
+#p76middle .sample2
+{
+    font-style: italic;
+}
+#p76middle .sample3
+{
+    font-style: oblique;
+}
+/* p075下 */
+#p76down h1.sample1
+{
+    text-decoration: underline;
+}
+#p76down h1.sample2
+{
+    border-left: 8px solid #390;
+    border-bottom: 1px solid #390;
+    padding: 4px;
+    font-size: x-large;
+}
+
