@@ -10,28 +10,28 @@ body > div > div
     background: #ccc;
 }
 /* p074 上 */
-#p74up #sample1
+#p74 div:first-child .sample1
 {
     color: #339900;
     background: #ffffff;
 }
-#p74up #sample2
+#p74 div:first-child .sample2
 {
     color: #390;
     background: #fff;
 }
-#p74up #sample3
+#p74 div:first-child .sample3
 {
     color: rgb(51,153,0);
     background: rgb(255,255,255);
 }
-#p74up #sample4
+#p74 div:first-child .sample4
 {
     color: rgb(20%,60%,0%);
     background: rgb(100%,100%,100%);
 }
 /* p074 中 */
-#p74middle em
+#p74 div:first-child + div em
 {
     color: #fff;
     background: #390;
@@ -40,93 +40,93 @@ body > div > div
     border: double 6px #000;
 }
 /* p074 下 */
-#p74down .sample1
+#p74 div:first-child + div + div .sample1
 {
     line-height: 1.5;
     color: #333;
     background: #fff;
 }
 /* p075 上 */
-#p75up .sample1
+#p75 div:first-child .sample1
 {
     font-size: xx-small;
 }
-#p75up .sample2
+#p75 div:first-child .sample2
 {
     font-size: x-small;
 }
-#p75up .sample3
+#p75 div:first-child .sample3
 {
     font-size: small;
 }
-#p75up .sample4
+#p75 div:first-child .sample4
 {
     font-size: medium;
 }
-#p75up .sample5
+#p75 div:first-child .sample5
 {
     font-size: large;
 }
-#p75up .sample6
+#p75 div:first-child .sample6
 {
     font-size: x-large;
 }
-#p75up .sample7
+#p75 div:first-child .sample7
 {
     font-size: xx-large;
 }
 /* p075中 */
-#p75middle .sample1
+#p75 div:first-child + div .sample1
 {
     font-family: "ＭＳ Ｐ明朝" , "ヒラギノ明朝 Pro W3" , "平成明朝" , serif;
 }
-#p75middle .sample2
+#p75 div:first-child + div .sample2
 {
     font-family: "ＭＳ Ｐゴシック" , "ヒラギノ角ゴ Pro W3" , Osaka , san-serif;
 }
 /* p075下 */
-#p75down a
+#p75 div:first-child + div + div a
 {
     text-decoration: none;
 }
-#p75down a:hover
+#p75 div:first-child + div + div a:hover
 {
     text-decoration: underline;
     color: #f60;
     background: #fff;
 }
 /* p076上 */
-#p76up .sample1
+#p76 div:first-child .sample1
 {
     font-weight: normal;
 }
-#p76up .sample2
+#p76 div:first-child .sample2
 {
     font-weight: 600;
 }
-#p76up .sample3
+#p76 div:first-child .sample3
 {
     font-weight: bold;
 }
 /* p076中 */
-#p76middle .sample1
+#p76 div:first-child + div .sample1
 {
     font-style: normal;
 }
-#p76middle .sample2
+#p76 div:first-child + div .sample2
 {
     font-style: italic;
 }
-#p76middle .sample3
+#p76 div:first-child + div .sample3
 {
     font-style: oblique;
 }
 /* p076下 */
-#p76down h1.sample1
+#p76 div:first-child + div + div h1.sample1
 {
     text-decoration: underline;
 }
-#p76down h1.sample2
+#p76 div:first-child + div + div h1.sample2
 {
     border-left: 8px solid #390;
     border-bottom: 1px solid #390;
@@ -134,36 +134,75 @@ body > div > div
     font-size: x-large;
 }
 /* p077上 */
-#p77up .sample1
+#p77 div:first-child .sample1
 {
     text-align: left;
 }
-#p77up .sample2
+#p77 div:first-child .sample2
 {
     text-align: center;
 }
-#p77up .sample3
+#p77 div:first-child .sample3
 {
     text-align: right;
 }
 /* p077中 */
-#p77middle .sample1
+#p77 div:first-child + div .sample1
 {
     vertical-align: top;
 }
-#p77middle .sample2
+#p77 div:first-child + div .sample2
 {
     vertical-align: middle;
 }
-#p77middle .sample3
+#p77 div:first-child + div .sample3
 {
     vertical-align: bottom;
 }
 /* p077下 */
-#p77down p
+#p77 div:first-child + div + div p
 {
     text-indent: 1em;
     line-height: 1.5em;
     width: 280px;
     margin: 20px 0 0 20px;
+}
+/* p078上 */
+#p78 div:first-child .sample1
+{
+    letter-spacing: normal;
+}
+#p78 div:first-child .sample2
+{
+    letter-spacing: 0.5em;
+}
+#p78 div:first-child .sample3
+{
+    letter-spacing: 1.0em;
+}
+#p78 div:first-child .sample4
+{
+    letter-spacing: 2.0em;
+}
+/* p078中 */
+#p78 div:first-child + div p.sample1
+{
+    white-space: normal;
+}
+#p78 div:first-child + div p.sample2
+{
+    white-space: nowrap;
+}
+/* p078下 */
+#p78 div:first-child + div + div .sample1
+{
+    text-transform: uppercase;
+}
+#p78 div:first-child + div + div .sample2
+{
+    text-transform: lowercase;
+}
+#p78 div:first-child + div + div .sample3
+{
+    text-transform: capitalize;
 }
