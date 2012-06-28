@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <title></title>
+</head>
+<body>
+    <h1>
+        プロトタイプ継承して <span style="color: Blue">stooge.name = 山田太郎</span> を参照する。</h1>
+    <h2>
+        GoodPars 3.5 プロトタイプのcreateメソッド</h2>
+    <textarea id="output1" rows="3" cols="50"></textarea>
+    <script type="text/javascript">
+        if (typeof Object.create !== 'function') {
+            Object.create = function (o) {
+                var F = function () { };
+                F.prototype = o;
+                return new F();
+            };
+        }
+        var stooge = { name: '山田太郎' };
+        var another_stooge = Object.create(stooge);
+        var output1 =
+            'another_stooge.prototype \t= ' + another_stooge.prototype + '\r\n' +
+            'another_stooge.name \t\t= ' + another_stooge.name + '\r\n';
+
+        $('#output1').val(output1);
+    </script>
+    <h2>
+        別のオブジェクトのプロトタイプに代入</h2>
+    <textarea id="output2" rows="3" cols="50"></textarea>
+    <script type="text/javascript">
+        var stooge = { name: '山田太郎' };
+        var another_stooge = {};
+        another_stooge.prototype = stooge;
+        var output1 =
+            'another_stooge.prototype \t= ' + another_stooge.prototype + '\r\n' +
+            'another_stooge.name \t\t= ' + another_stooge.name + '\r\n';
+
+        $('#output2').val(output1);
+    </script>
+    <h2>
+        stoogeを関数にしてnew 演算子でコンストラクタ呼び出し</h2>
+    <textarea id="output3" rows="3" cols="50"></textarea>
+    <script type="text/javascript">
+        var stooge = function () { };
+        stooge.name = '山田太郎';
+        var another_stooge = new stooge();
+        var output1 =
+            'another_stooge.prototype \t= ' + another_stooge.prototype + '\r\n' +
+            'another_stooge.name \t\t= ' + another_stooge.name + '\r\n';
+
+        $('#output3').val(output1);
+    </script>
+    <h2>
+        プロトタイプを持つ関数をnew 演算子でコンストラクタ呼び出し</h2>
+    <textarea id="output4" rows="5" cols="50"></textarea>
+    <script type="text/javascript">
+        var stooge = { name: '山田太郎' };
+        var ConstructorFunction = function () { };
+        ConstructorFunction.prototype = stooge;
+        var another_stooge = new ConstructorFunction();
+        var output1 =
+            'ConstructorFunction.prototype \t= ' + ConstructorFunction.prototype + '\r\n' +
+            'another_stooge.prototype \t= ' + another_stooge.prototype + '\r\n' +
+            'another_stooge.name \t\t= ' + another_stooge.name + '\r\n';
+
+        $('#output4').val(output1);
+    </script>
+</body>
+</html>
