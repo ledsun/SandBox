@@ -11,61 +11,62 @@
         基本オブジェクト</h2>
     <textarea id="output1" rows="10" cols="50"></textarea>
     <script type="text/javascript">
-        var output1 = '';
-        output1 += 'typeof 1 \t\t= ' + typeof 1 + '\r\n'
-        output1 += 'typeof NaN \t\t= ' + typeof NaN + '\r\n'
-        output1 += 'typeof "Hello" \t\t= ' + typeof "Hello" + '\r\n'
-        output1 += 'typeof true \t\t= ' + typeof true + '\r\n'
-        output1 += 'typeof null \t\t= ' + typeof null + '\r\n'
-        output1 += 'typeof {} \t\t= ' + typeof {} + '\r\n'
-        output1 += 'typeof undefined \t= ' + typeof undefined + '\r\n'
-        output1 += 'typeof function(){} \t= ' + typeof function () { } + '\r\n'
+        var output1 =
+            'typeof 1 \t\t= ' + typeof 1 + '\r\n' +
+            'typeof NaN \t\t= ' + typeof NaN + '\r\n' +
+            'typeof "Hello" \t\t= ' + typeof "Hello" + '\r\n' +
+            'typeof true \t\t= ' + typeof true + '\r\n' +
+            'typeof null \t\t= ' + typeof null + '\r\n' +
+            'typeof {} \t\t= ' + typeof {} + '\r\n' +
+            'typeof undefined \t= ' + typeof undefined + '\r\n' +
+            'typeof function(){} \t= ' + typeof (function () { }) + '\r\n';
         $('#output1').val(output1);
     </script>
     <h2>
         基本オブジェクト型</h2>
     <textarea id="output2" rows="10" cols="50"></textarea>
     <script type="text/javascript">
-        var output2 = '';
-        output2 += 'typeof Math \t\t= ' + typeof (Math) + '\r\n'
-        output2 += 'typeof Number \t\t= ' + typeof (Number) + '\r\n'
-        output2 += 'typeof String \t\t= ' + typeof (String) + '\r\n'
-        output2 += 'typeof Boolean \t\t= ' + typeof (Boolean) + '\r\n'
-        output2 += 'typeof Array \t\t= ' + typeof (Array) + '\r\n'
-        output2 += 'typeof Date \t\t= ' + typeof (Date) + '\r\n'
-        output2 += 'typeof RegExp \t\t= ' + typeof (RegExp) + '\r\n'
-        output2 += 'typeof Object \t\t= ' + typeof (Object) + '\r\n'
-        output2 += 'typeof Function \t= ' + typeof (Function) + '\r\n'
+        var output2 =
+            'typeof Math \t\t= ' + typeof (Math) + '\r\n' +
+            'typeof Number \t\t= ' + typeof (Number) + '\r\n' +
+            'typeof String \t\t= ' + typeof (String) + '\r\n' +
+            'typeof Boolean \t\t= ' + typeof (Boolean) + '\r\n' +
+            'typeof Array \t\t= ' + typeof (Array) + '\r\n' +
+            'typeof Date \t\t= ' + typeof (Date) + '\r\n' +
+            'typeof RegExp \t\t= ' + typeof (RegExp) + '\r\n' +
+            'typeof Object \t\t= ' + typeof (Object) + '\r\n' +
+            'typeof Function \t= ' + typeof (Function) + '\r\n';
         $('#output2').val(output2);
     </script>
     <h2>
         newしたらFunction以外はみんなオブジェクト</h2>
-    <textarea id="output3" rows="7" cols="50"></textarea>
+    <textarea id="output3" rows="10" cols="50"></textarea>
     <script type="text/javascript">
-        var output3 = '';
-        output3 += 'typeof new Number(123) \t\t= ' + typeof new Number(123) + '\r\n'
-        output3 += 'typeof new String("Hello") \t= ' + typeof new String('Hello') + '\r\n'
-        output3 += 'typeof new Boolean(true) \t= ' + typeof new Boolean(true) + '\r\n'
-        output1 += 'typeof new Array() \t\t= ' + typeof new Array() + '\r\n'
-        output1 += 'typeof new Date() \t\t= ' + typeof new Date() + '\r\n'
-        output1 += 'typeof new RegExp() \t\t= ' + typeof new RegExp() + '\r\n'
-        output3 += 'typeof new Object(){} \t\t= ' + typeof new Object() + '\r\n'
-        output3 += 'typeof new Function() \t\t= ' + typeof new Function() + '\r\n'
+        var output3 =
+            'typeof new Number(123) \t\t= ' + typeof new Number(123) + '\r\n' +
+            'typeof new String("Hello") \t= ' + typeof new String('Hello') + '\r\n' +
+            'typeof new Boolean(true) \t= ' + typeof new Boolean(true) + '\r\n' +
+            'typeof new Array() \t\t= ' + typeof new Array() + '\r\n' +
+            'typeof new Date() \t\t= ' + typeof new Date() + '\r\n' +
+            'typeof new RegExp() \t\t= ' + typeof new RegExp() + '\r\n' +
+            'typeof new Object(){} \t\t= ' + typeof new Object() + '\r\n' +
+            'typeof new Function() \t\t= ' + typeof new Function() + '\r\n';
         $('#output3').val(output3);
     </script>
     <h2>
         prototype</h2>
     <textarea id="output4" rows="10" cols="50"></textarea>
     <script type="text/javascript">
-        var output4 = '';
-        output4 += 'typeof 1["prototype"] \t\t= ' + typeof (1["prototype"]) + '\r\n'
-        output4 += 'typeof NaN.prototype \t\t= ' + typeof (NaN.prototype) + '\r\n'
-        output4 += 'typeof "Hello".prototype \t= ' + typeof ("Hello".prototype) + '\r\n'
-        output4 += 'typeof true.prototype \t\t= ' + typeof (true.prototype) + '\r\n'
-        output4 += 'typeof {}.prototype \t\t= ' + typeof ({}.prototype) + '\r\n'
-        output4 += 'typeof new Array().prototype \t= ' + typeof (new Array().prototype) + '\r\n'
-        output4 += 'typeof function(){}.prototype \t= ' + typeof (function () { } .prototype) + '\r\n'
-        output4 += 'typeof Object.prototype \t= ' + typeof (Object.prototype) + '\r\n'
+        var output4 =
+            'typeof 1["prototype"] \t\t= ' + typeof (1["prototype"]) + '\r\n' +
+            'typeof NaN.prototype \t\t= ' + typeof (NaN.prototype) + '\r\n' +
+            'typeof "Hello".prototype \t= ' + typeof ("Hello".prototype) + '\r\n' +
+            'typeof true.prototype \t\t= ' + typeof (true.prototype) + '\r\n' +
+            'typeof {}.prototype \t\t= ' + typeof ({}.prototype) + '\r\n' +
+            'typeof new Array().prototype \t= ' + typeof (new Array().prototype) + '\r\n' +
+            'typeof new Date().prototype \t= ' + typeof (new Date().prototype) + '\r\n' +
+            'typeof function(){}.prototype \t= ' + typeof (function () { } .prototype) + '\r\n' +
+            'typeof Object.prototype \t= ' + typeof (Object.prototype) + '\r\n';
         $('#output4').val(output4);
     </script>
 </body>
