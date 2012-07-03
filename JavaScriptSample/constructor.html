@@ -3,12 +3,25 @@
 <head>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <title></title>
+    <style type="text/css">
+        pre
+        {
+            background-color: #ddd;
+        }
+    </style>
 </head>
 <body>
     <h1>
         プロトタイプ継承して <span style="color: Blue">stooge.name = 山田太郎</span> を参照する。</h1>
     <h2>
         GoodPars 3.5 プロトタイプのcreateメソッド</h2>
+    <pre>
+Object.create = function (o) {
+    var F = function () { };
+    F.prototype = o;
+    return new F();
+};
+    </pre>
     <textarea id="output1" rows="3" cols="50"></textarea>
     <script type="text/javascript">
         if (typeof Object.create !== 'function') {
@@ -28,6 +41,11 @@
     </script>
     <h2>
         別のオブジェクトのプロトタイプに代入</h2>
+    <pre>
+var stooge = { name: '山田太郎' };
+var another_stooge = {};
+another_stooge.prototype = stooge;
+    </pre>
     <textarea id="output2" rows="3" cols="50"></textarea>
     <script type="text/javascript">
         var stooge = { name: '山田太郎' };
@@ -41,6 +59,11 @@
     </script>
     <h2>
         stoogeを関数にしてnew 演算子でコンストラクタ呼び出し</h2>
+    <pre>
+var stooge = function () { };
+stooge.name = '山田太郎';
+var another_stooge = new stooge();
+    </pre>
     <textarea id="output3" rows="3" cols="50"></textarea>
     <script type="text/javascript">
         var stooge = function () { };
@@ -54,6 +77,12 @@
     </script>
     <h2>
         プロトタイプを持つ関数をnew 演算子でコンストラクタ呼び出し</h2>
+    <pre>
+var stooge = { name: '山田太郎' };
+var ConstructorFunction = function () { };
+ConstructorFunction.prototype = stooge;
+var another_stooge = new ConstructorFunction();
+    </pre>
     <textarea id="output4" rows="5" cols="50"></textarea>
     <script type="text/javascript">
         var stooge = { name: '山田太郎' };
