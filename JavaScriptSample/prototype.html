@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+</head>
+<body>
+    <h1>
+        プロトタイプを拡張するには？</h1>
+    プロトタイプのリンクとプロトタイプのプロパティ拡張は同時にしない方が吉<br />
+    同時に行うとリンク先オブジェクトに破壊的な変更をすることになる。
+    <h2>
+        リンクしたプロトタイプオブジェクトを拡張</h2>
+    <h3>
+        コンストラクタ関数のプロトタイプのプロパティを拡張</h3>
+    <pre>
+var stooge = {};
+var ConstructorFunction = function () { };
+ConstructorFunction.prototype = stooge;
+var another_stooge = new ConstructorFunction();
+ConstructorFunction.prototype.value = '100';
+    </pre>
+    <textarea id="output1" rows="5" cols="50"></textarea>
+    <script type="text/javascript">
+        var stooge = {};
+        var ConstructorFunction = function () { };
+        ConstructorFunction.prototype = stooge;
+        var another_stooge = new ConstructorFunction();
+        ConstructorFunction.prototype.value = '100';
+        var output1 =
+            'ConstructorFunction.prototype \t= ' + ConstructorFunction.prototype + '\r\n' +
+            'another_stooge.prototype \t= ' + another_stooge.prototype + '\r\n' +
+            'another_stooge.value \t\t= ' + another_stooge.value + '\r\n' +
+            'stooge.value \t\t\t= ' + stooge.value + '\r\n';
+
+        $('#output1').val(output1);
+    </script>
+    <h3>
+        親オブジェクトのプロパティを拡張するのと等価</h3>
+    <pre>
+var stooge = {};
+var ConstructorFunction = function () { };
+ConstructorFunction.prototype = stooge;
+var another_stooge = new ConstructorFunction();
+stooge.value = '100';
+    </pre>
+    <textarea id="output2" rows="5" cols="50"></textarea>
+    <script type="text/javascript">
+        var stooge = {};
+        var ConstructorFunction = function () { };
+        ConstructorFunction.prototype = stooge;
+        var another_stooge = new ConstructorFunction();
+        stooge.value = '100';
+        var output1 =
+            'ConstructorFunction.prototype \t= ' + ConstructorFunction.prototype + '\r\n' +
+            'another_stooge.prototype \t= ' + another_stooge.prototype + '\r\n' +
+            'another_stooge.value \t\t= ' + another_stooge.value + '\r\n' +
+            'stooge.value \t\t\t= ' + stooge.value + '\r\n';
+
+        $('#output2').val(output1);
+    </script>
+    <h2>
+        プロトタイプが無いと、プロトタイプのプロパティを拡張すると例外が起きる</h2>
+    <h3>
+        オブジェクトはプロトタイプを持たない</h3>
+    <pre>
+var stooge = {};
+try {
+    stooge.prototype.value = 100;
+    alert('aa');
+} catch (e) {
+    //例外が出ます。
+}
+    </pre>
+    <textarea id="output3" rows="3" cols="50"></textarea>
+    <script type="text/javascript">
+        var stooge = {};
+        try {
+            stooge.prototype.value = 100;
+            alert('aa');
+        } catch (e) {
+            //例外が出ます。
+        }
+        var output1 =
+            'stooge.prototype \t= ' + stooge.prototype + '\r\n' +
+            'stooge.value \t\t= ' + stooge.value + '\r\n';
+
+        $('#output3').val(output1);
+    </script>
+    <h3>
+        new演算子で生成されたオブジェクトはプロトタイプを持たない</h3>
+    <pre>
+var object1 = new function(){};
+try {
+    object1.prototype.value = 100;
+    alert('aa');
+} catch (e) {
+    //例外が出ます。
+}
+    </pre>
+    <textarea id="output4" rows="3" cols="50"></textarea>
+    <script type="text/javascript">
+        var object1 = new function () { };
+        try {
+            object1.prototype.value = 100;
+            alert('aa');
+        } catch (e) {
+            //例外が出ます。
+        }
+        var output1 =
+            'object1.prototype \t= ' + object1.prototype + '\r\n' +
+            'object1.value \t\t= ' + object1.value + '\r\n';
+
+        $('#output4').val(output1);
+    </script>
+    <h2>
+        インスタンスプロパティ</h2>
+    関数はプロトタイプを持っている。プロパティを拡張できる。newして作成したオブジェクトからは参照できるが自分からは参照できない。
+    <pre>
+var ConstructorFunction = function () { };
+ConstructorFunction.prototype.value = 100;
+var object1 = new ConstructorFunction();
+    </pre>
+    <textarea id="output7" rows="5" cols="50"></textarea>
+    <script type="text/javascript">
+        var ConstructorFunction = function () { };
+        ConstructorFunction.prototype.value = 100;
+        var object1 = new ConstructorFunction();
+
+        var output1 =
+            'ConstructorFunction.prototype \t= ' + ConstructorFunction.prototype + '\r\n' +
+            'ConstructorFunction.value \t\t= ' + ConstructorFunction.value + '\r\n' +
+            'object1.value \t= ' + object1.value + '\r\n';
+
+        $('#output7').val(output1);
+    </script>
+    <h2>
+        静的プロパティ</h2>
+    親オブジェクトのプロパティは、newして作成したオブジェクトからは参照できない。
+    <pre>
+var ConstructorFunction = function () { };
+ConstructorFunction.value = 100;
+var object1 = new ConstructorFunction();
+    </pre>
+    <textarea id="output8" rows="5" cols="50"></textarea>
+    <script type="text/javascript">
+        var ConstructorFunction = function () { };
+        ConstructorFunction.value = 100;
+        var object1 = new ConstructorFunction();
+
+        var output1 =
+            'ConstructorFunction.prototype \t= ' + ConstructorFunction.prototype + '\r\n' +
+            'ConstructorFunction.value \t= ' + ConstructorFunction.value + '\r\n' +
+            'object1.value \t\t\t= ' + object1.value + '\r\n';
+
+        $('#output8').val(output1);
+    </script>
+</body>
+</html>
