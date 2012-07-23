@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charsert=UTF-8" />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+    <style>
+        body
+        {
+            background: #AAA;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+    <input type="text" id="datepicker2" />
+    <script type="text/javascript">
+        var showAdditionalButton = function (input) {
+            setTimeout(function () {
+                var buttonPane = $(input)
+                         .datepicker("widget")
+                         .find(".ui-datepicker-buttonpane");
+
+                var btn = $('<button class="ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all" type="button">クリア</button>');
+                btn
+                        .unbind("click")
+                        .bind("click", function () {
+                            $.datepicker._clearDate(input);
+                        });
+
+                btn.appendTo(buttonPane);
+            }, 1);
+        };
+
+        $("#datepicker2").datepicker({
+            showButtonPanel: true,
+            beforeShow: showAdditionalButton,       //追加ボタンを表示します。
+            onChangeMonthYear: showAdditionalButton //今日を選択または月を切り替えると追加ボタンが消えるので再表示します。
+        });  
+    </script>
+</body>
+</html>
