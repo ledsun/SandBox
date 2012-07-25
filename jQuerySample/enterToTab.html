@@ -12,7 +12,8 @@
     <input type="text" />
     <script type="text/javascript">
         $('input:first')
-            .on('keydown', function (e) {
+            .on('keydown', function (e) { //keypressもkeyupもダメ
+                //window.eventオブジェクトのキーコードを書き換えると振る舞いが変わる。
                 if (event.keyCode == 13) {
                     event.keyCode = 9;
                 }
