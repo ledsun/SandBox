@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charsert=UTF-8" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <title></title>
+</head>
+<body>
+    <p>
+        Enterを押したら次のテキストボックスに遷移する。</p>
+    <input type="text" />
+    <input type="text" />
+    <script type="text/javascript">
+        $('input:first')
+            .on('keydown', function (e) {
+                if (event.keyCode == 13) {
+                    event.keyCode = 9;
+                }
+            });
+    </script>
+</body>
+</html>
