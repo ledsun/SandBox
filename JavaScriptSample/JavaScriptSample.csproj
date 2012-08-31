@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="prototype.html" />
+    <Content Include="Scripts\jquery.caret.1.02.js" />
     <Content Include="typeof.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -61,6 +62,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="constructor.html" />
+    <Content Include="getCaret2.html" />
+    <Content Include="getCaret1.html" />
+    <Content Include="getCaret3.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

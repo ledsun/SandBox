@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <title></title>
+</head>
+<body>
+    <h1>
+        キャレット取得3 jQueryプラグイン jCaretを使う</h1>
+    <input type="text" id="target" /><br />
+    <p id="keydown">
+        keydown start:<span class="start"></span> end:<span class="end"></span>
+    </p>
+    <p id="keypress">
+        keypress start:<span class="start"></span> end:<span class="end"></span>
+    </p>
+    <p id="keyup">
+        keyup start:<span class="start"></span> end:<span class="end"></span>
+    </p>
+    <p id="mousemove">
+        mousemove start:<span class="start"></span> end:<span class="end"></span>
+    </p>
+    <script type="text/javascript" src="Scripts/jquery.caret.1.02.js"></script>
+    <script type="text/javascript">
+        $("#target")
+            .keydown(function () {
+                $("#keydown .start").text($(this).caret().start);
+                $("#keydown .end").text($(this).caret().end);
+            })
+            .keypress(function () {
+                $("#keypress .start").text($(this).caret().start);
+                $("#keypress .end").text($(this).caret().end);
+            })
+            .keyup(function () {
+                $("#keyup .start").text($(this).caret().start);
+                $("#keyup .end").text($(this).caret().end);
+            })
+            .mousemove(function () {
+                $("#mousemove .start").text($(this).caret().start);
+                $("#mousemove .end").text($(this).caret().end);
+            });
+    </script>
+</body>
+</html>

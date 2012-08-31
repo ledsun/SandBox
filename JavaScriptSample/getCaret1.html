@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <title></title>
+</head>
+<body>
+    <h1>
+        キャレット取得1 JavaSript関数を使う1</h1>
+    <input type="text" id="target" /><br />
+    <p id="keypress">
+        keypress start:<span class="start"></span>
+    </p>
+    <p id="keyup">
+        keypress start:<span class="start"></span>
+    </p>
+    <input type="button" />
+    <script type="text/javascript">
+        function getCaret(el) {
+            if (el.selectionStart) {
+                return el.selectionStart;
+            } else if (document.selection) {
+                el.focus();
+
+                var r = document.selection.createRange();
+                if (r == null) {
+                    return 0;
+                }
+
+                var re = el.createTextRange(),
+                    rc = re.duplicate();
+                re.moveToBookmark(r.getBookmark());
+                rc.setEndPoint('EndToStart', re);
+
+                return rc.text.length;
+            }
+            return 0;
+        }
+
+        $('#target')
+            .keypress(function () {
+                var out = getCaret(this);
+                $('#keypress .start').text(out);
+            })
+            .keyup(function () {
+                var out = getCaret(this);
+                $('#keyup .start').text(out);
+            });
+        $(':button')
+            .click(function () {
+                var out = getCaret($('#target')[0]);
+                $(this).val(out);
+            });
+    </script>
+</body>
+</html>
