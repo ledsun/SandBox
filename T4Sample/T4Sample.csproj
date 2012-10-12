@@ -43,18 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PreTextTemplate1.cs">
+    <Compile Include="MakeHtmlSampleTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PreTextTemplate1.tt</DependentUpon>
+      <DependentUpon>MakeHtmlSampleTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="PreTextTemplate1.tt">
+    <None Include="MakeHtmlSampleTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>PreTextTemplate1.cs</LastGenOutput>
+      <LastGenOutput>MakeHtmlSampleTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
