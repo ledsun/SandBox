@@ -60,6 +60,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="doubleModalDialog.html" />
+    <Content Include="changeHiddenSize.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

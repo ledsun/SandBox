@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jQueryUISample", "jQueryUIS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveXSample", "ActiveXSample\ActiveXSample.csproj", "{B1E159CF-F812-463D-9E11-51A315441CC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4Sample", "T4Sample\T4Sample.csproj", "{648311C2-7CCB-42CA-B506-6E88664D4891}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -133,6 +135,16 @@ Global
 		{B1E159CF-F812-463D-9E11-51A315441CC2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B1E159CF-F812-463D-9E11-51A315441CC2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B1E159CF-F812-463D-9E11-51A315441CC2}.Release|x86.ActiveCfg = Release|Any CPU
+		{648311C2-7CCB-42CA-B506-6E88664D4891}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{648311C2-7CCB-42CA-B506-6E88664D4891}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{648311C2-7CCB-42CA-B506-6E88664D4891}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{648311C2-7CCB-42CA-B506-6E88664D4891}.Debug|x86.ActiveCfg = Debug|x86
+		{648311C2-7CCB-42CA-B506-6E88664D4891}.Debug|x86.Build.0 = Debug|x86
+		{648311C2-7CCB-42CA-B506-6E88664D4891}.Release|Any CPU.ActiveCfg = Release|x86
+		{648311C2-7CCB-42CA-B506-6E88664D4891}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{648311C2-7CCB-42CA-B506-6E88664D4891}.Release|Mixed Platforms.Build.0 = Release|x86
+		{648311C2-7CCB-42CA-B506-6E88664D4891}.Release|x86.ActiveCfg = Release|x86
+		{648311C2-7CCB-42CA-B506-6E88664D4891}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
