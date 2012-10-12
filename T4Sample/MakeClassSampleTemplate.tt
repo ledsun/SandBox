@@ -1,0 +1,55 @@
+﻿<#@ template language="C#" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Jdip.Qdbs.Model
+{
+    /// <summary>
+    /// データクラスです。
+    /// </summary>
+    public class <#= _classData.ClassName #> : DTOBase, IPatientId
+    {
+<# foreach (var p in _classData.Properties)
+ { #>
+        public <#= p.Declare #> { get; private set; }
+<# } #>
+
+        public <#= _classData.ClassName #>(<#= _classData.ConstructorPalameters #>)
+        {
+<# foreach (var p in _classData.Properties)
+ { #>
+            <#= p.ConstructorProcess #>
+<# } #>
+        }
+
+        #region Equalsのオーバーライド
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+
+            var other = (<#= _classData.ClassName #>)obj;
+            return <#= _classData.EqualsProcess #>;
+        }
+
+        public override int GetHashCode()
+        {
+            return <#= _classData.GetHashCodeProcess #>;
+        }
+        #endregion
+
+        /// <summary>
+        /// テスト用のダミーデータを返します。
+        /// </summary>
+<# for (var i = 0; i < _classData.CountID; i++)
+ { #>
+        public static <#= _classData.ClassName #> Dummy(<#= _classData.GetDummyParameters( i + 1 ) #>)
+        {
+            return new <#= _classData.ClassName #>(<#= _classData.GetDummyConstructorParameters(i) #>);
+        }
+
+<# } #>
+    }
+}

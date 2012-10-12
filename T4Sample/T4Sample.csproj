@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MakeClassSampleTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MakeClassSampleTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MakeClassSampleTemplateCode.cs" />
     <Compile Include="MakeHtmlSampleTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -52,6 +58,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="MakeClassSampleTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>MakeClassSampleTemplate.cs</LastGenOutput>
+    </None>
     <None Include="MakeHtmlSampleTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>MakeHtmlSampleTemplate.cs</LastGenOutput>
