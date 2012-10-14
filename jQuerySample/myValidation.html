@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charsert=UTF-8" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <style type="text/css">
+        .backRed
+        {
+            background-color: red;
+        }
+
+        .hidden
+        {
+            display: none;
+        }
+
+        .error
+        {
+            color: red;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+    <div class="digits">
+        <input type="text" />
+    </div>
+    <div class="alpha">
+        <input type="text" />
+    </div>
+    <script type="text/javascript">
+        //divにイベントを発生させる
+        var initDiv = function () {
+            $('div').each(function () {
+                var v = this,
+                    $input = $(this).find('input');
+
+                $input.on('keyup', function () {
+                    $(v).trigger('myEvent');
+                }),
+
+                this.value = function () {
+                    return $input.val();
+                };
+            });
+
+        },
+            //バリデーションの初期設定
+            initValidation = function (context, validation) {
+                $.each(validation, function () {
+                    var v = this;
+                    $('.' + v.name, context)
+                        .append('<label class="errorLabel hidden">' + this.message + '</label>')
+                        .on(v.event, function () {
+                            var d = this;
+                            $errorLabel = $(d).find('.errorLabel');
+
+                            if (v.func.call(d.value())) {
+                                $errorLabel
+                                    .removeClass('hidden')
+                                    .addClass('error');
+                            } else {
+                                $errorLabel
+                                    .removeClass('error')
+                                    .addClass('hidden');
+                            }
+                        });
+                });
+            };
+
+        //バリデーションの種類を定義
+        var validation = [
+           { name: 'digits', event: 'myEvent', func: function () { return !/^\d*$/.test(this); }, message: '数字を入れてね' },
+           { name: 'alpha', event: 'myEvent', func: function () { return !/^[A-Za-z]*$/.test(this); }, message: '英語を入れてね' },
+        ];
+
+        initDiv();
+        initValidation($('body'), validation);
+    </script>
+</body>
+</html>
