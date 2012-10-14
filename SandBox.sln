@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveXSample", "ActiveXSam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4Sample", "T4Sample\T4Sample.csproj", "{648311C2-7CCB-42CA-B506-6E88664D4891}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JQuery.ValidationSample", "JQuery.ValidationSample\JQuery.ValidationSample.csproj", "{2BA6449C-3BE2-4685-9A86-28F98A2E7616}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,6 +147,16 @@ Global
 		{648311C2-7CCB-42CA-B506-6E88664D4891}.Release|Mixed Platforms.Build.0 = Release|x86
 		{648311C2-7CCB-42CA-B506-6E88664D4891}.Release|x86.ActiveCfg = Release|x86
 		{648311C2-7CCB-42CA-B506-6E88664D4891}.Release|x86.Build.0 = Release|x86
+		{2BA6449C-3BE2-4685-9A86-28F98A2E7616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA6449C-3BE2-4685-9A86-28F98A2E7616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA6449C-3BE2-4685-9A86-28F98A2E7616}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2BA6449C-3BE2-4685-9A86-28F98A2E7616}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2BA6449C-3BE2-4685-9A86-28F98A2E7616}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2BA6449C-3BE2-4685-9A86-28F98A2E7616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA6449C-3BE2-4685-9A86-28F98A2E7616}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BA6449C-3BE2-4685-9A86-28F98A2E7616}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2BA6449C-3BE2-4685-9A86-28F98A2E7616}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2BA6449C-3BE2-4685-9A86-28F98A2E7616}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
