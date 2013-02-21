@@ -4,9 +4,16 @@ namespace JavaScriptPostSample
 {
     public partial class _Default : System.Web.UI.Page
     {
-        protected void javascriptPosted(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
-            lblMessage.Text = "リロードしました";
+            if (!IsPostBack)
+            {
+                lblMessage.Text = "初回ロードだよ";
+            }
+            else
+            {
+                lblMessage.Text = "ポストバックだよ";
+            }
         }
     }
 }
