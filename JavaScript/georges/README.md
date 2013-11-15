@@ -144,6 +144,3 @@ georges.txtの中身が次のようになっていれば成功です。
 (　ﾟ∀ﾟ)彡　おっぱい！おっぱい！
 　⊂彡
 ```
-
-## 今回使用したファイル
-今回使用したファイルは[github](https://github.com/ledsun/SandBox/tree/master/JavaScript/georges)に公開しています。
