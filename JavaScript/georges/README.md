@@ -147,8 +147,3 @@ georges.txtの中身が次のようになっていれば成功です。
 
 ## 今回使用したファイル
 今回使用したファイルは[github](https://github.com/ledsun/SandBox/tree/master/JavaScript/georges)に公開しています。
-
-## 参考図書
-「WEB+DB PRESS Vol.77」に「Gruntでフロントエンド開発作業の自動化」という記事があります。
-
-<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774159905/ledsun-22/ref=nosim/" rel="nofollow" ><img src="http://images-jp.amazon.com/images/P/4774159905.09.jpg" style="border: none;" alt="WEB+DB PRESS Vol.77" /></a>
