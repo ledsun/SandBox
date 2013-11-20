@@ -1,4 +1,4 @@
-# Gruntの livereload を動かしてみる
+# Gruntの livereload を動かす
 
 ## livereloadとは？
 
@@ -54,14 +54,18 @@ module.exports = function(grunt) {
 ```
 grunt connect watch
 ```
-逆にしたらあかんのや。connectに到達できない。
+逆にしたらあかん。connectに到達せずにwatchで無限ループに入ってしまう。
 
 ### ブラウザに拡張をインストール
 [GoogleChrome拡張](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)を入れる
 
 ### ブラウザで開く
-http://localhost:8000 を開いてアイコンをクリックして
-アイコンマジ見づらいしねよｗｗｗ
+http://localhost:8000 を開いて右上のアイコンをクリックします。
+
+これが![off](off.png)、これに![on](on.png)なると有効です。
+
+アイコンマジ見づらくて、初見ではonなったことに気づかない率が200%
+一回onになったの気づかなくてもう一回おしてoffになって、連打してもまだ気づかないから200%
 
 ### 変更してみる
 
