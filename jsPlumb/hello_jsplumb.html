@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="jquery.jsPlumb-1.5.3.js "></script>
+	<script type="text/javascript">
+		jsPlumb.ready(function(){
+			console.log("hello");
+
+		    var e0 = jsPlumb.addEndpoint("node0"),
+			    e1 = jsPlumb.addEndpoint("node1");
+		    //jsPlumb.connect({ source:e0, target:e1 });
+
+		    var e2 = jsPlumb.addEndpoint("container0"),
+    			e3 = jsPlumb.addEndpoint("container1");
+    		//jsPlumb.connect({ source:e2, target:e3 });
+		})
+	</script>
+	<body>
+	    <div id="container0">
+	        <div id="node0"></div>
+	    </div>
+	    <div id="container1">
+	        <div id="node1"></div>
+	    </div>
+	    <div id="container2">
+    	</div>
+    	<div id="container3">
+    	</div>
+	</body>
+</html>
