@@ -1,0 +1,105 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <style type="text/css">
+    div {
+        border-style: solid;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Bootstrap3のグリッドシステムを配置してみる。</h1>
+    <p>
+        <h2>ブレイクポイント</h2>
+        ブレイクポイントが固定です。
+        <ol>
+            <li>1200px</li>
+            <li>992px</li>
+            <li>768px</li>
+        </ol>
+    </p>
+
+    <p>
+        <h2>4種類のデバイスを想定</h2>
+        <ol>
+            <li>スマートフォン</li>
+            <li>タブレット</li>
+            <li>小さいデスクトップ</li>
+            <li>大きいデスクトップ</li>
+        </ol>
+        xs(Extra small devices Phones） ~ 768px ~ sm(Small devices Tablets) ~ 992px ~ md(Medium devices Desktops) ~ 1200px ~ lg(Large devices Desktops)
+    </p>
+
+    <p>
+        <h2>Containerの幅</h2>
+        <ol>
+            <li>xs: Auto</li>
+            <li>sm: 750px</li>
+            <li>md: 970px</li>
+            <li>lg: 1170px</li>
+        </ol>
+        1200px以上の画面を最大限に使いたい場合はContainerをそのままでは使えない。
+    </p>
+    <div style="padding:0 15px 0 15px; magin: auto;">
+        <div class="row">
+            <div class="col-md-12">abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz1234567890</div>
+        </div>
+    </div>
+
+    <p>
+        <h2>分割サンプル</h2>
+        開発ツールを有効にしてウィンドウ幅を確認しながら変更してみるとわかりやすい。中身が縮小されないと見切れることもあるけど、12分割あたりは見事。
+        <div class="container">
+            1分割
+            <div class="row">
+                <div class="col-md-12">abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz1234567890</div>
+            </div>
+            2分割
+            <div class="row">
+                <div class="col-md-6">abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz123</div>
+                <div class="col-md-6">abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz123</div>
+            </div>
+            3分割
+            <div class="row">
+                <div class="col-md-4">abcdefghijklmnopqrstuvwxyz1234567890abcde</div>
+                <div class="col-md-4">abcdefghijklmnopqrstuvwxyz1234567890abcde</div>
+                <div class="col-md-4">abcdefghijklmnopqrstuvwxyz1234567890abcde</div>
+            </div>
+            4分割
+            <div class="row">
+                <div class="col-sm-6 col-md-3">abcdefghijklmnopqrstuvwxyz12345</div>
+                <div class="col-sm-6 col-md-3">abcdefghijklmnopqrstuvwxyz12345</div>
+                <div class="col-sm-6 col-md-3">abcdefghijklmnopqrstuvwxyz12345</div>
+                <div class="col-sm-6 col-md-3">abcdefghijklmnopqrstuvwxyz12345</div>
+            </div>
+            6分割
+            <div class="row">
+                <div class="col-xs-8 col-sm-4 col-md-2">abcdefghijklmnopqrst</div>
+                <div class="col-xs-8 col-sm-4 col-md-2">abcdefghijklmnopqrst</div>
+                <div class="col-xs-8 col-sm-4 col-md-2">abcdefghijklmnopqrst</div>
+                <div class="col-xs-8 col-sm-4 col-md-2">abcdefghijklmnopqrst</div>
+                <div class="col-xs-8 col-sm-4 col-md-2">abcdefghijklmnopqrst</div>
+                <div class="col-xs-8 col-sm-4 col-md-2">abcdefghijklmnopqrst</div>
+            </div>
+            12分割
+            <div class="row">
+                <div class="col-xs-4 col-sm-2 col-md-1">abcdefgh</div>
+                <div class="col-xs-4 col-sm-2 col-md-1">abcdefgh</div>
+                <div class="col-xs-4 col-sm-2 col-md-1">abcdefgh</div>
+                <div class="col-xs-4 col-sm-2 col-md-1">abcdefgh</div>
+                <div class="col-xs-4 col-sm-2 col-md-1">abcdefgh</div>
+                <div class="col-xs-4 col-sm-2 col-md-1">abcdefgh</div>
+                <div class="col-xs-4 col-sm-2 col-md-1">abcdefgh</div>
+                <div class="col-xs-4 col-sm-2 col-md-1">abcdefgh</div>
+                <div class="col-xs-4 col-sm-2 col-md-1">abcdefgh</div>
+                <div class="col-xs-4 col-sm-2 col-md-1">abcdefgh</div>
+                <div class="col-xs-4 col-sm-2 col-md-1">abcdefgh</div>
+                <div class="col-xs-4 col-sm-2 col-md-1">abcdefgh</div>
+            </div>
+        </div>
+    </P>
+</body>
+
+</html>
