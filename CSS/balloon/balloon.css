@@ -1,0 +1,23 @@
+.balloon { margin: 20px auto; width: 300px; }
+
+.balloon-default {
+	background: #efefef;
+	border-radius: 4px;
+	color: #666;
+	padding: 10px;
+	position: relative;
+}
+
+.balloon-default::after {
+	border-left: solid 7px transparent;
+	border-right: solid 7px transparent;
+	border-top: solid 10px #efefef;
+	bottom: -10px;
+	content: "";
+	display: block;
+	height: 0;
+	left: 50%;
+	margin-left: -5px;
+	position: absolute;
+	width: 0;
+}
