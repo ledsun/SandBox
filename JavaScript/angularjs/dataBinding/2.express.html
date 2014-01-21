@@ -1,0 +1,12 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+  </head>
+  <body>
+    1 + 1 =　<input ng-model="answer" placeHolder="答えは？">
+    <div>
+      {{answer == 2 && '正解です' || '間違っています' }}
+    </div>
+  </body>
+</html>
