@@ -1,0 +1,24 @@
+{
+  "name": "vue",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ledsun/SandBox",
+  "authors": [
+    "ledsun <shigeru.nakajima@gmail.com>"
+  ],
+  "description": "vue sample",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "~0.10.4"
+  }
+}
