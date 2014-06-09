@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <style type="text/css">
+      .clip_button {
+        text-align: center;
+        border: 1px solid black;
+        background-color: #ccc;
+        margin: 10px;
+        padding: 10px;
+      }
+      .clip_button.zeroclipboard-is-hover { background-color: #eee; }
+      .clip_button.zeroclipboard-is-active { background-color: #aaa; }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="ZeroClipboard.js"></script>
+
+    <div class="clip_button">Copy To Clipboard</div>
+    <div class="clip_button">Copy This Too!</div>
+
+    <script type="text/javascript">
+      var client = new ZeroClipboard( $('.clip_button') );
+
+      client.on( 'ready', function(event) {
+        // console.log( 'movie is loaded' );
+
+        client.on( 'copy', function(event) {
+          event.clipboardData.setData('text/plain', event.target.innerHTML);
+        } );
+
+        client.on( 'aftercopy', function(event) {
+          console.log('Copied text to clipboard: ' + event.data['text/plain']);
+        } );
+      } );
+
+      client.on( 'error', function(event) {
+        // console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+        ZeroClipboard.destroy();
+      } );
+    </script>
+  </body>
+</html>
