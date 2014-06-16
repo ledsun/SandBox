@@ -1,0 +1,86 @@
+<html>
+<head>
+  <script src="../bower_components/vue/dist/vue.js"></script>
+  <style>
+    .done{text-decoration:line-through;}
+  </style>
+</head>
+<body>
+  <div id="demo">
+    <!-- filter -->
+    <h1>{{title |reverse}}</h1>
+    <p>
+      filter column
+      <select v-model="selected">
+        <option>number</option>
+        <option>content</option>
+      </select>
+      {{selected}}
+    </p>
+
+      filter text
+      <input v-model="searchText">
+
+    <ul>
+      <!--Mustache Binding-->
+      <li
+          v-repeat="todos | filterBy searchText in selected"
+          v-on="click: done = !done"
+          class="{{done ? 'done' : ''}}">
+          {{number}}{{number | pluralize st nd rd th}} {{content | wrap *****}}
+      </li>
+    </ul>
+
+    <!-- Computed Filters using this -->
+    <p>
+      concat to message
+      <input v-model="userInput">
+      <span>{{userInput}}</span>
+      <span>{{msg | concat userInput}}</span>
+    </p>
+
+    <!-- key filter -->
+    <p>
+      left to clear
+      <input type="text" v-model="hoge" v-on="keyup: hoge = '' | key left"/>
+      {{hoge}}
+    </p>
+  </div>
+  <script>
+  // custom filters
+  Vue.filter('reverse', function (value) {
+    return value.split('').reverse().join('')
+  })
+
+  Vue.filter('wrap', function(value, something){
+    return something + value + something;
+  })
+
+  Vue.filter('concat', function (value, key) {
+      // `this` points to the VM invoking the filter
+      return value + this[key]
+  })
+
+  var demo = new Vue({
+    el: '#demo',
+    data: {
+        cond:['number', 'content'],
+        msg: 'message',
+        title: 'todos',
+        todos: [
+            {
+                number :1,
+                done: true,
+                content: 'Learn JavaScript'
+            },
+            {
+                number:2,
+                done: false,
+                content: 'Learn vue.js'
+            }
+        ]
+    }
+  })
+  </script>
+</body>
+</html>
