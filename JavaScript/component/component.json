@@ -1,0 +1,8 @@
+{
+  "name": "getting-started-with-component",
+  "dependencies": {
+    "necolas/normalize.css": "^3.0.0"
+  },
+  "scripts": ["index.js"],
+  "styles": ["index.css"]
+}
