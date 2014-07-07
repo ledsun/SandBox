@@ -1,0 +1,44 @@
+# 20140707
+
+- http://vuejs-mkmk.connpass.com/event/7226/
+
+## 作ったもの
+
+- index.html
+
+### 前回のおさらい
+
+ ざっくりハローワールド
+
+### 本日のvue.js
+
+- currencyフィルターに文字列入れるとエラー起きる・・・
+- v-onが認識されなかったのでソースを読んだ
+  - v-onとかの実体はdirectivesディレクトリに入っている
+    - しかし呼ばれ方が分からないとソースが読めない。
+    - thisは何だ？
+    - mainでViewModel.optionsプロパティに設定される
+  - utils
+    - utils.defProtectedなる関数がある。definePropertyのラッパー
+    - enableDebugという関数がある。
+    - デバッグを有効するとデバッグしやすい？
+  - ViewModel内ではprototypeメソッドを定義。optionsは無い
+    - ViewModelの中でCompilerを初期化している。
+    - Compilerってなんだ？
+  - Compilerが一番のミソっぽい
+    - compileElementでhtmlを解析している
+    - isDirective = trueにしているところがdirectiveの初期化
+    - ここを通るかどうかででdirevtiveとして認識されているか分かる
+    - 通らなかったので`v-on`の文字列を書き直したら認識された。
+  - もしかしてDirectivesって1要素に複数乗る？
+    - ダメです、1個処理し終わったら消されました。
+    - browserのelementからも消えています。
+    - jQuery抜きのDOM API バリバリ。読めるけど、自分で書くのは辛い
+- 2時間/2weekでは全然進まない
+  - 案件に使うならもうちょっと時間投資が必要
+  - https://github.com/vuejs/vuejs.org への貢献を目標にするといいかも
+  - 前回(3週間前)に比べるとサンプルコードがちょっと修正されている気がする
+
+## editor談義
+- vimer多し
+- rubymine でJavaScript
