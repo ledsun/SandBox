@@ -1,0 +1,15 @@
+<html>
+<script src="bower_components/engine.io/engine.io.js"></script>
+<script>
+  var socket = new eio.Socket('ws://localhost:3000/');
+  socket.on('open', function(){
+    socket.on('message', function(data){
+      console.log(data);
+      socket.send('I recieved.');
+      console.log('送りました。');
+    });
+    socket.on('close', function(){});
+    socket.send('もしもし');
+  });
+</script>
+</html>
