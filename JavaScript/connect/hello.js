@@ -1,6 +1,8 @@
-var connect = require('connect');
+var connect = require('connect'),
+		serveStatic= require('serve-static');
+
 var app = connect()
-	.use(connect.static(global.process.env.PWD)) //実行ディレクトリを指定
+	.use(serveStatic(global.process.env.PWD)) //実行ディレクトリを指定
 	.use(function(req, res, next) {
 		if (req.method === "GET") {
 			path = require("url").parse(req.url).pathname; // reqのurlからファイル名を取得

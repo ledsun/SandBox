@@ -1,19 +1,22 @@
-#　動作確認
+# 動作確認
 
 connect 単体でも grunt-contribe-connectのmidolewareオプションに指定するのと同じ関数が動くのが確認できた。
 
 ```
-npm install connect
+npm install connect serve-static
 node hello.js
+open http://localhost:3000/
 ```
-
-http://localhost:3000/ を開く
 
 # 用途
 
-だが、connectの使いどころは分からない。
+connectはミドルウェアを組み合わせてミニマムなhttpサーバーを作るために使います。
 
-単にStubサーバにしたいならhttps://github.com/cyberagent/node-easymock使えばいい気がする。
-ちゃんとREST API Webアプリケーション作るならExpress使えばいい気がする。
+- Stubサーバがほしいならhttps://github.com/cyberagent/node-easymockを使えばいい
+- REST API Webアプリケーション作るならExpressを使えばいい
 
-もちろんWebアプリケーションフレームワークを作るときなんかは必要なんだろうけど・・・。そんなことしない。
+# ver3
+
+標準ミドルウェアが減った。
+例えばconnect-staticはなくなっている。
+代わりにserve-staticを使います。
