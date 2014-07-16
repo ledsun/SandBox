@@ -1,0 +1,26 @@
+<html>
+あ<input type="checkbox" id="button" />
+<script src="bower_components/engine.io/engine.io.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script>
+  var $button = $('#button');
+
+  var socket = new eio.Socket('ws://localhost:3000/');
+
+  $button.on('click', function(e){
+    socket.send(JSON.stringify({
+      id: 'button',
+      value: $(e.target).prop('checked')
+    }));
+  });
+
+  socket.on('open', function(){
+    socket.on('message', function(data){
+      data = JSON.parse(data);
+
+      console.log(data);
+      $('#' + data.id).prop('checked', data.value);
+    });
+  });
+</script>
+</html>
