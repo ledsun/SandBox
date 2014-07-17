@@ -5,31 +5,31 @@
 </ol>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script>
-var $textarea = $('textarea'),
-  str = $textarea.val(),
-  disp = function(text){
-    $li = $('<li>').text(text);
-    $('#disp').prepend($li);
-  };
+  var $textarea = $('textarea'),
+    str = $textarea.val(),
+    disp = function(text) {
+      $li = $('<li>').text(text);
+      $('#disp').prepend($li);
+    };
 
-$textarea
-  .on('change', function(e){
-    console.log('フォーカスが外れたときに呼ばれる');
-  })
-  .on('keyup', function(e){
-    //keydown だと変更前、keyup はスマフォで取れない
-    var newstr = $(e.target).val(),
+  $textarea
+    .on('change', function(e) {
+      console.log('フォーカスが外れたときに呼ばれる');
+    })
+    .on('keyup', function(e) {
+      //keydown だと変更前、keyup はスマフォで取れない
+      var newstr = $(e.target).val(),
         length = str.length > newstr.length ? str.length : newstr.length,
         i;
 
-    for(i = 0; i < length; i++){
-        if(str[i] !== newstr[i]) console.log(i);
-    }
+      for (i = 0; i < length; i++) {
+        if (str[i] !== newstr[i]) console.log(i);
+      }
 
-    disp(length + ' ' + newstr);
+      disp(length + ' ' + newstr);
 
-    str = newstr;
-  });
-
+      str = newstr;
+    });
 </script>
+
 </html>
