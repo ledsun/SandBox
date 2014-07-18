@@ -1,22 +1,46 @@
 <html>
 <div>
-  <input id="src" value="あいうえお"></input>
-  <input id="dest" value="あいうお"></input>
+  <input id="src" value="あいうえおたか"></input>
+  <input id="dest" value="かまあいうおたま"></input>
   <span id="output"><span>
 </div>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="difflib.js"></script>
 <script>
     var diff = function(){
-        var sm = new difflib.SequenceMatcher($('#src').val(), $('#dest').val());
-        var opcodes = sm.get_opcodes();
-        console.log(JSON.stringify(opcodes));
-        $('#output').text(JSON.stringify(opcodes));
-        // 配列が帰ってくる
+        var src = $('#src').val(),
+            dest = $('#dest').val(),
+            sm = new difflib.SequenceMatcher(src, dest),
+            opcodes = sm.get_opcodes();
+
+        // 配列の配列が帰ってくる
         // 変更種別、元の文字での場所、先の文字での場所
+        console.log(opcodes);
+
+        var result = opcodes.map(function(diff){
+            if(diff[0] === 'insert'){
+                diff[5] = dest.slice(diff[3], diff[4]);
+            }
+
+            if(diff[0] === 'equal'){
+                diff[5] = src.slice(diff[1], diff[2]);
+            }
+
+            if(diff[0] === 'delete'){
+                diff[5] = src.slice(diff[1], diff[2]);
+            }
+
+            if(diff[0] === 'replace'){
+                diff[5] = src.slice(diff[1], diff[2]);
+                diff[6] = dest.slice(diff[3], diff[4]);
+            }
+
+            return diff;
+        });
+
+        $('#output').text(JSON.stringify(result));
     };
 
-    $('div').on('keyup', '#src, #dest', diff);
     diff();
 </script>
 
