@@ -1,0 +1,23 @@
+<html>
+<div>
+  <input id="src" value="あいうえお"></input>
+  <input id="dest" value="あいうお"></input>
+  <span id="output"><span>
+</div>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="difflib.js"></script>
+<script>
+    var diff = function(){
+        var sm = new difflib.SequenceMatcher($('#src').val(), $('#dest').val());
+        var opcodes = sm.get_opcodes();
+        console.log(JSON.stringify(opcodes));
+        $('#output').text(JSON.stringify(opcodes));
+        // 配列が帰ってくる
+        // 変更種別、元の文字での場所、先の文字での場所
+    };
+
+    $('div').on('keyup', '#src, #dest', diff);
+    diff();
+</script>
+
+</html>
