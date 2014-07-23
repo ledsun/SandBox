@@ -1,0 +1,11 @@
+var mqtt = require('mqtt');
+var client = mqtt.createClient(1883, {
+  username: 'admin',
+  password: 'password'
+});
+
+setInterval(function() {
+  client.publish('message');
+  client.publish('message', 'こんにちわ');
+  client.publish('message', Date.now().toString());
+}, 1000);
