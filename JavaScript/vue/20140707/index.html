@@ -7,9 +7,9 @@
       hello {{you}}!
       給料は {{salary | currency ￥}}
       <span v-text="grade | pluralize 松 竹 梅"></span>
-      昇給<input v-on="keyup:salary++ | key up" v-on="keyup:salary-- | key down"></input>
-      昇格<input type="button" v-on="click:grade++"></input>
-      へいコンソール<textarea v-on="keyup:hey()"></textarea>
+      昇給<input v-on="keyup:salary++ | key up" v-on="keyup:salary-- | key down" placeholder="上下キーで昇級"></input>
+      昇格<input type="button" v-on="click:grade++" value="クリックで昇格"></input>
+      へいコンソール<textarea v-on="keyup:hey()" placeholder="keyup でコンソールに出力"></textarea>
     </div>
 </body>
 <script>
