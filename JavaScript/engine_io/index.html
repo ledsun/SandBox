@@ -10,6 +10,11 @@
     });
     socket.on('close', function(){});
     socket.send('もしもし');
+
+    setInterval(function() {
+      socket.send('12345678901234567890');
+    }, 1000);
+
   });
 </script>
 </html>

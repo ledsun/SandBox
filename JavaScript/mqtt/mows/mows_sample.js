@@ -1,7 +1,8 @@
 var mows = require('mows'),
   client = mows.createClient(61623, {
     username: 'admin',
-    password: 'password'
+    password: 'password',
+    keepalive: 10000
   });
 
 client
@@ -11,5 +12,5 @@ client
   })
 
 setInterval(function() {
-  client.publish('message', 'こんにちわ');
+  client.publish('message', '1234567890');
 }, 1000);
