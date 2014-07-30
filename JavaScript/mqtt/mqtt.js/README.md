@@ -20,7 +20,6 @@ node publisher.js
 ```
 
 - 複数のターミナルを使います。
-- ポート番号の修正が必要
 
 参考：[Apache Apollo と Node.js で MQTT を試してみる - Null.ly](http://null.ly/post/56517703680/apache-apollo-node-js-mqtt)
 
