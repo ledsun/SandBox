@@ -18,6 +18,14 @@ http://qiita.com/checkpoint/items/58b9b0193c0c46400eeb
 ```
 brew install redis
 redis-server /usr/local/etc/redis.conf
-npm install mosca  
-mosca -c config.js | bunyan
+npm install mosca
+mosca -c conf.js | bunyan
+```
+
+## embeded
+
+```
+npm install -g grunt-cli
+npm install
+grunt
 ```

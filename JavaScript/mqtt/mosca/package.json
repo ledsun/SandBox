@@ -1,0 +1,24 @@
+{
+  "name": "mosca_sample",
+  "version": "0.0.0",
+  "description": "sample for mosca",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mqtt",
+    "brocker"
+  ],
+  "author": "ledsun",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-external-daemon": "^1.1.0",
+    "grunt-nodemon": "^0.3.0"
+  },
+  "dependencies": {
+    "mosca": "^0.23.2",
+    "redis": "^0.11.0"
+  }
+}
