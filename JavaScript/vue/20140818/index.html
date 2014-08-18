@@ -1,0 +1,235 @@
+<html>
+
+<head>
+  <script src="../bower_components/vue/dist/vue.js"></script>
+  <style>
+    .msg {
+      transition: all .3s ease;
+      height: 30px;
+      padding: 10px;
+      background-color: #eee;
+      overflow: hidden;
+    }
+    .msg.v-enter,
+    .msg.v-leave {
+      height: 0;
+      padding: 0 10px;
+      opacity: 0;
+    }
+  </style>
+  <style>
+    .animated {
+      display: inline-block;
+    }
+    .animated.v-enter {
+      -webkit-animation: fadein .5s;
+      animation: fadein .5s;
+    }
+    .animated.v-leave {
+      -webkit-animation: fadeout .5s;
+      animation: fadeout .5s;
+    }
+    @keyframes fadein {
+      0% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+      }
+      50% {
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+      }
+    }
+    @keyframes fadeout {
+      0% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+      }
+      50% {
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+      }
+      100% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+      }
+    }
+    @-webkit-keyframes fadein {
+      0% {
+        -webkit-transform: scale(0);
+      }
+      50% {
+        -webkit-transform: scale(1.5);
+      }
+      100% {
+        -webkit-transform: scale(1);
+      }
+    }
+    @-webkit-keyframes fadeout {
+      0% {
+        -webkit-transform: scale(1);
+      }
+      50% {
+        -webkit-transform: scale(1.5);
+      }
+      100% {
+        -webkit-transform: scale(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <fieldset id="computed">
+      <legend>computed properties</legend>
+      <p>
+        {{firstName}} + {{lastName}} = {{fullNameReadOnly}}
+      </p>
+      <p>
+        <input v-model="fullName"></input>
+      </p>
+      <p>
+        <input type="button" v-on="click : toggleValidate()" value="Toggle validate"></input>{{status}}
+      </p>
+    </fieldset>
+    <fieldset id="animated">
+      <legend>transition</legend>
+      <p>
+        <span class="animated" v-if="show" v-animation>Look at me!</span>
+      </p>
+      <p class="msg" v-if="show" v-transition>Hello!</p>
+      <p v-effect="my-effect"></p>
+      <input type="button" v-on="click : show=!show" value="Show Hello"></input>
+    </fieldset>
+    <fieldset id="component">
+      <legend>component</legend>
+      <div v-component="my-component"></div>
+      <my-component2></my-component2>
+      <div id="demo-1">
+        <p v-component="user-profile" v-with="user"></p>
+      </div>
+      <div id="parent">
+        <p>{{parentMsg}}</p>
+        <p v-component="child" v-with="childMsg : parentMsg">
+          <!--  別名を付けられる -->
+        </p>
+      </div>
+      <ul id="demo-2">
+        <!-- reusing the user-profile component we registered before -->
+        <li v-repeat="users" v-component="user-profile"></li>
+      </ul>
+    </fieldset>
+  </div>
+</body>
+<script>
+  var computed = new Vue({
+    el: "#computed",
+    data: {
+      firstName: 'Foo',
+      lastName: 'Bar',
+      okMsg: 'OK',
+      errMsg: 'ERRER',
+
+    },
+    computed: {
+      fullName: {
+        // the getter should return the desired value
+        $get: function() {
+          return this.firstName + ' ' + this.lastName
+        },
+        // the setter is optional
+        $set: function(newValue) {
+          var names = newValue.split(' ')
+          this.firstName = names[0]
+          this.lastName = names[names.length - 1]
+        }
+      },
+      fullNameReadOnly: function() {
+        return this.firstName + ' ' + this.lastName
+      },
+      status: function() {
+        return this.validated ? this.okMsg : this.errMsg
+      }
+    },
+    methods: {
+      toggleValidate: function() {
+        this.validated = !this.validated
+        this.errMsg += '!'
+      }
+    }
+  })
+
+  new Vue({
+    el: '#animated',
+    data: {
+      show: true
+    }
+  })
+
+  Vue.effect('my-effect', {
+    enter: function(el, insert, timeout) {
+      console.log(el)
+      // insert() will actually insert the element
+    },
+    leave: function(el, remove, timeout) {
+      // remove() will actually remove the element
+    }
+  })
+
+  var MyComponent = Vue.extend({
+    template: 'A custom component!'
+  })
+  Vue.component('my-component', MyComponent)
+  Vue.component('my-component2', {
+    template: 'A custom component2!'
+  })
+
+  //Data Inheritance
+  Vue.component('user-profile', {
+    template: '{{name}}<br>{{email}}'
+  })
+  var parent = new Vue({
+    el: '#demo-1',
+    data: {
+      user: {
+        name: 'Foo Bar',
+        email: 'foo@bar.com'
+      }
+    }
+  })
+
+  new Vue({
+    el: '#parent',
+    data: {
+      parentMsg: 'Shared message'
+    },
+    components: {
+      child: {
+        template: '<input v-model="childMsg">'
+      }
+    }
+  })
+
+  var parent2 = new Vue({
+    el: '#demo-2',
+    data: {
+      users: [{
+        name: 'Chuck Norris',
+        email: 'chuck@norris.com'
+      }, {
+        name: 'Bruce Lee',
+        email: 'bruce@lee.com'
+      }]
+    }
+  })
+
+  new Vue({
+    el: '#component'
+  })
+</script>
+
+</html>
