@@ -1,0 +1,8 @@
+{
+  "name": "my_app",
+  "private": true,
+  "dependencies": {
+    "angular": "1.x",
+    "angular-route": "1.x"
+  }
+}
