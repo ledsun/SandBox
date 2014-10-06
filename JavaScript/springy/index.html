@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script src="bower_components/springy/springy.js"></script>
+  <script src="bower_components/springy/springyui.js"></script>
+</head>
+
+<body>
+  hello springy!
+  <canvas id="springydemo" />
+</body>
+<script>
+  var graph = new Springy.Graph();
+  $('#springydemo').springy({
+    graph: graph
+  })
+
+  graph.loadJSON({
+    "nodes": ["mark", "higgs", "other", "etc"],
+    "edges": [
+      ["mark", "higgs"],
+      ["mark", "etc"],
+      ["mark", "other"]
+    ]
+  })
+</script>
+
+</html>
