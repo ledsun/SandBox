@@ -2,3 +2,5 @@
 TestResults/
 bin/
 obj/
+.vs/
+packages/
